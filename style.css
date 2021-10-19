@@ -1,6 +1,6 @@
-* {
+/* {
     border: red solid 1px;
-}
+}*/
 
 body {
     display: flex;
@@ -53,22 +53,31 @@ img {
 }
 
 .buttons {
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    column-gap: 5px;
     flex: 1;
 }
 
 .numbers {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 3px;
+    row-gap: 3px;
 }
 
 .operators {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 3px;
+    row-gap: 3px;
 }
 
 button {
+}
+
+#is {
+    justify-self: stretch;
 }
 
 .footer {
