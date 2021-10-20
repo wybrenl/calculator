@@ -11,7 +11,7 @@ body {
 
 .header {
     font-size: 60px;
-    background-color: lightsteelblue;
+    background-color: ligh;
     display: flex;
     height: 80px;
     justify-content: center;
@@ -86,10 +86,6 @@ img {
 
 .other {
     background-color: lightskyblue;
-}
-
-button {
-    font-size: 20px;
 }
 
 .footer {
