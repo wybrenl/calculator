@@ -75,6 +75,13 @@ const factorials = document.querySelector('#factorial');
 const answer = document.querySelector('#equals');
 const clears = document.querySelector('#AC');
 
+//make number scientific if longer than 10 digits
+function science (num) {
+  if (num.toString().length > 10) {
+    return num.toExponential(3);
+  } else {return num};
+}
+
 // evenlisteners for numbers
 Array.from(numbers).forEach((number) => {
   number.addEventListener('click', function(e) {
@@ -114,7 +121,7 @@ answer.addEventListener('click', function(e) {
   if (oper.length == 1) {//user can only click equals sign if 1 operator key has been hit
     let answer = operate(oper[0], Number(firstVal.join('')), Number(secVal.join('')));
     if (typeof answer !== 'string') {//checks for divide by zero error
-      display.textContent =  Math.round(answer * 100) / 100;
+      display.textContent =  science(Math.round(answer * 100) / 100);
     } else {
       display.textContent = answer;
     };  
