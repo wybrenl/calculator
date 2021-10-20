@@ -11,7 +11,7 @@ body {
 
 .header {
     font-size: 60px;
-    background-color: ligh;
+    background-color: lightsteelblue; 
     display: flex;
     height: 80px;
     justify-content: center;
