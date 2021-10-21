@@ -2,6 +2,7 @@
 let oper = []; // store operator
 let firstVal = []; //stores first operand
 let secVal = []; //stores second operand
+let ans = false;
 
 //operators
 function add (a, b) {
@@ -85,7 +86,8 @@ function science (num) {
 // evenlisteners for numbers
 Array.from(numbers).forEach((number) => {
   number.addEventListener('click', function(e) {
-    if (oper.length == 0) {//if there is no operator then user enters first value, else the second value
+    if (oper.length == 0 && ans == true) {//if there is no operator then user enters first value, else the second value
+      firstVal = [];
       if (firstVal.includes(".")) {
         dots.disabled = true;
         firstVal.push(e.target.innerHTML);
@@ -94,6 +96,15 @@ Array.from(numbers).forEach((number) => {
         dots.disabled = false;
         firstVal.push(e.target.innerHTML);
         document.querySelector('.display').textContent = firstVal.join(''); }
+    } else if (oper.length == 0) {
+      if (firstVal.includes(".")) {
+        dots.disabled = true;
+        firstVal.push(e.target.innerHTML);
+        document.querySelector('.display').textContent = firstVal.join('');
+      } else {
+        dots.disabled = false;
+        firstVal.push(e.target.innerHTML);
+        document.querySelector('.display').textContent = firstVal.join('');}
     } else {
       if (secVal.includes(".")) {
         dots.disabled = true;
@@ -102,10 +113,9 @@ Array.from(numbers).forEach((number) => {
       } else {
         dots.disabled = false;
         secVal.push(e.target.innerHTML);
-        document.querySelector('.display').textContent = secVal.join('');
+        document.querySelector('.display').textContent = secVal.join('');}
       }
-    }
-  });
+    });
 });
 
 //eventlisteners for operators + - / * ^ 
@@ -129,6 +139,7 @@ answer.addEventListener('click', function(e) {
     firstVal = [answer]; //enables user to continue with current answer
     secVal = [];
     dots.disabled = false;
+    ans = true;
   };
 });
 
@@ -138,6 +149,7 @@ clears.addEventListener('click', function(e) {
   firstVal = [];
   secVal = [];
   oper = [];
+  ans = false;
 });
 
 //eventlistener for factorial
