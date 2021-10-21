@@ -156,7 +156,9 @@ clears.addEventListener('click', function(e) {
 factorials.addEventListener('click', function(e) {
   let answer = factorial(firstVal);
   display.textContent = answer
-  firstVal = [answer]
+  oper = [];
+  firstVal = [answer];
+  ans = true;
 });
 
 //eventlistener for backspace
